@@ -1,0 +1,940 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ce este Istoria? | Istoria - cea mai frumoasă poveste!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+/* ==========================================
+   MODERN EDUCATIONAL WEBSITE - HISTORY LEARNING PLATFORM
+   Design: Ultra-modern with glassmorphism, gradients and animations
+   ========================================== */
+
+/* ===== CSS CUSTOM PROPERTIES ===== */
+:root {
+    /* Modern Color Palette */
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --warning-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    
+    /* Main Colors */
+    --alb: #ffffff;
+    --negru: #1a1a1a;
+    --albastru-inchis: #2c3e50;
+    --azur: #3498db;
+    --verde: #27ae60;
+    --orange: #e67e22;
+    --rosu: #e74c3c;
+    --gri-deschis: #ecf0f1;
+    --gri-mediu: #7f8c8d;
+    --gri-inchis: #34495e;
+    
+    /* Modern Glass Colors */
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    
+    /* Spacing */
+    --spacing-xs: 0.3rem;
+    --spacing-sm: 0.7rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 2.5rem;
+    
+    /* Typography */
+    --font-primary: 'Poppins', sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 2.5rem;
+    
+    /* Animations */
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Borders */
+    --border-radius-sm: 0.5rem;
+    --border-radius: 1rem;
+    --border-radius-lg: 1.5rem;
+    --border-radius-xl: 2rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* ===== RESET & BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    /* COPY PROTECTION */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--negru);
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    min-height: 100vh;
+    
+    /* COPY PROTECTION */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: auto;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-xs);
+}
+
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+h4 { font-size: var(--font-size-xl); }
+h5 { font-size: var(--font-size-lg); }
+h6 { font-size: var(--font-size-base); }
+
+p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--alb);
+}
+
+a {
+    text-decoration: none;
+    color: var(--azur);
+    transition: var(--transition-fast);
+}
+
+a:hover {
+    color: var(--albastru-inchis);
+}
+
+strong {
+    color: red;
+}
+
+/* ===== UTILITIES ===== */
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--glass-shadow);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: var(--font-primary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--primary-gradient);
+    color: var(--alb);
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--alb);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-brand i {
+    font-size: var(--font-size-xl);
+    background: var(--warning-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-menu {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.nav-link {
+    color: var(--alb);
+    font-weight: 500;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition-fast);
+    position: relative;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--warning-gradient);
+    transition: var(--transition-normal);
+}
+
+.nav-link:hover::before {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: var(--alb);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+    margin-top: 20px;
+    min-height: calc(100vh - 80px);
+}
+
+/* ===== HERO SECTIONS ===== */
+.hero {
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--alb);
+}
+
+.hero-title {
+    font-size: clamp(1.5rem, 8vw, 3rem);
+    font-weight: 800;
+    margin-bottom: var(--spacing-md);
+    text-shadow: 1px 1px 2px rgb(234, 233, 233);
+    background: linear-gradient(100deg, #fff, #f0f8ff, #e6f3ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleFloat 6s ease-in-out infinite;
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-2xl);
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: var(--spacing-lg);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes titleFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.hero-breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+    font-size: var(--font-size-sm);
+}
+
+.hero-breadcrumb a,
+.hero-breadcrumb span {
+    color: var(--alb);
+    opacity: 0.8;
+}
+
+.hero-breadcrumb a:hover {
+    opacity: 1;
+}
+
+/* ===== LESSONS SECTION (Class Pages) ===== */
+.lessons-section {
+    padding: var(--spacing-2xl) 0;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.lessons-grid {
+    display: grid;
+    gap: var(--spacing-2xl);
+}
+
+.lesson-category {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.category-title {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--alb);
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-md) 0;
+    border-bottom: 3px solid;
+    border-image: var(--warning-gradient) 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.category-title i {
+    font-size: var(--font-size-xl);
+    background: var(--warning-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.lessons-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 coloane default */
+  grid-template-rows: auto auto; /* 2 rânduri */
+  gap: var(--spacing-lg);
+}
+
+.lessons-list > :first-child {
+  grid-column: 1 / -1; /* primul element să ocupe toată lățimea (toate cele 3 coloane) */
+}
+
+.lessons-list-1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* coloane flexibile */
+  gap: var(--spacing-lg);
+}
+
+.lesson-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    transition: var(--transition-normal);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--glass-shadow);
+}
+
+.lesson-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--success-gradient);
+    transform: scaleY(0);
+    transition: var(--transition-normal);
+}
+
+.lesson-card:hover::before {
+    transform: scaleY(1);
+}
+
+.lesson-card:hover {
+    transform: translateX(5px) translateY(-3px);
+    box-shadow: var(--shadow-xl);
+}
+
+.lesson-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    color: var(--alb);
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    flex-shrink: 0;
+    box-shadow: var(--shadow);
+}
+
+/* Background neutru static pentru lesson-card-urile cu numere 01-10 */
+.lesson-card:has(.lesson-number.neutral-bg),
+.special-card:has(.lesson-number.neutral-bg),
+.info-card:has(.lesson-number.neutral-bg),
+.written-sources:has(.lesson-number.neutral-bg),
+.unwritten-sources:has(.lesson-number.neutral-bg),
+.auxiliary-intro:has(.lesson-number.neutral-bg),
+.archaeology-card:has(.lesson-number.neutral-bg),
+.epigraphy-card:has(.lesson-number.neutral-bg),
+.numismatics-card:has(.lesson-number.neutral-bg) {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Textul din lesson-card-urile albe să fie întunecat */
+.lesson-card:has(.lesson-number.neutral-bg) .lesson-content h4,
+.lesson-card:has(.lesson-number.neutral-bg) .lesson-content p {
+    color: #2c3e50 !important;
+    text-shadow: none !important;
+}
+
+.lesson-card:has(.lesson-number.neutral-bg) .lesson-icon {
+    color: #495057 !important;
+}
+
+.lesson-content {
+    flex: 1;
+}
+
+.lesson-content h4 {
+    color: var(--alb);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-xs);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.lesson-content p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1,5;
+    font-size: var(--font-size-xl);
+}
+
+.lesson-icon {
+    font-size: var(--font-size-2xl);
+    background: var(--warning-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    flex-shrink: 0;
+    transition: var(--transition-fast);
+}
+
+.lesson-card:hover .lesson-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--alb);
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+    margin-top: var(--spacing-2xl);
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.footer-links {
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--font-size-sm);
+    transition: var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--alb);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* ===== CE ESTE ISTORIA SPECIFIC STYLES ===== */
+.special-card {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
+    border: 2px solid rgba(52, 152, 219, 0.3);
+}
+
+.info-card {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1));
+    border: 2px solid rgba(46, 204, 113, 0.3);
+}
+
+.written-sources {
+    background: linear-gradient(135deg, rgba(230, 126, 34, 0.1), rgba(211, 84, 0, 0.1));
+    border: 2px solid rgba(230, 126, 34, 0.3);
+}
+
+.unwritten-sources {
+    background: linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(142, 68, 173, 0.1));
+    border: 2px solid rgba(155, 89, 182, 0.3);
+}
+
+.navigation-card {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
+    border: 2px solid rgba(52, 152, 219, 0.3);
+    transition: all var(--transition-normal);
+}
+
+.navigation-card:hover {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(41, 128, 185, 0.2));
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.sources-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-sm);
+}
+
+.sources-list li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-xs);
+    border-radius: var(--border-radius);
+    font-size: 1.2rem;
+    transition: var(--transition-fast);
+    text-align: center;
+}
+
+.sources-list li:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-md);
+}
+
+.example-tag {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--alb);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    transition: var(--transition-fast);
+}
+
+.example-tag:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+    .lessons-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --spacing-xs: 0.25rem;
+        --spacing-sm: 0.5rem;
+        --spacing-md: 1rem;
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2rem;
+        --spacing-2xl: 2.5rem;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        padding: var(--spacing-md);
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero-title {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+    
+    .lessons-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .lesson-card {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+    
+    .lesson-number {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .category-title {
+        font-size: var(--font-size-xl);
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+    
+    
+    
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-breadcrumb {
+        flex-wrap: wrap;
+    }
+    
+    .sources-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .examples {
+        justify-content: center;
+    }
+}
+
+/* ===== AI ASSISTANT SPECIFIC ANIMATIONS ===== */
+
+
+@keyframes speaking {
+    from { 
+        height: 4px; 
+        background: #2c3e50; 
+        transform: scaleY(1);
+    }
+    to { 
+        height: 8px; 
+        background: #e67e22; 
+        border-radius: 8px;
+        transform: scaleY(1.2);
+    }
+}
+
+/* Responsive improvements for mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-xs);
+    }
+    
+    .lesson-card {
+        padding: var(--spacing-md);
+    }
+}
+
+/* ===== ANIMATIONS & EFFECTS ===== */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply animations */
+.lesson-card {
+    animation: slideInRight 0.4s ease-out forwards;
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    body {
+        animation: none;
+    }
+}
+
+    </style>
+</head>
+
+<body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;" oncut="return false;" oncopy="return false;" onpaste="return false;">
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-book-open"></i>
+                <span>Istoria - rădăcina unei societăți!</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Acasă</a>
+                <a href="ce_este_istoria.html" class="nav-link">Napoleon I și răspândirea ideilor revoluției franceze în Europa</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Napoleon I și răspândirea ideilor revoluției franceze în Europa</h1>
+                <div class="hero-breadcrumb">
+                    <a href="index.html"><i class="fas fa-home"></i> Acasă</a>
+                    <span><i class="fas fa-chevron-right"></i></span>
+                    <span>Napoleon I și răspândirea ideilor revoluției franceze în Europa</span>
+                </div>
+            </div>
+        </section>
+
+        <iframe src="Proiect_Python/index.html" frameborder="0" allowfullscreen></iframe>
+
+        <!-- Lessons Section -->
+        <section class="lessons-section">
+            <div class="container">
+                <div class="lessons-grid">
+
+                    <!-- Domnia lui Napoleon I -->
+                    <div class="lesson-category">
+                        <div class="lessons-list">
+                            <div class="lesson-card special-card">
+                                <div class="lesson-number neutral-bg">01</div>
+                                <div class="lesson-content">
+                                    <h2> &#9632;&nbsp; În urma revoluției franceze, în 1799, în Franța se impune <strong>Consulatul</strong> (3 consuli).</h2>
+                                    <h2> &#9632;&nbsp; Napoleon I devine <strong>prim-consul</strong>, (ales până în 1804), când se proclamă <br> <strong>împărat</strong> (1804-1814).</h2>
+                                </div>
+                                <div class="lesson-icon">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                            </div>
+                        </div>
+                <br>
+                        <div class="lessons-list">
+                            <div class="lesson-card special-card">
+                                <div class="lesson-number neutral-bg">02</div>
+                                <div class="lesson-content">
+                                    <h2>&#9632;&nbsp;În calitate de împărat, Napoleon I deținea puterea absolută și de aceea propune crearea <strong>Marii Armate</strong> (700.000 de soldați).</h2>
+                                </div>
+                                <div class="lesson-icon">
+                                    <i class="fas fa-book-open"></i>
+                                </div>
+                            </div>
+                        </div>
+                <br>
+                        <div class="lessons-list">
+                            <div class="lesson-card info-card">
+                                <div class="lesson-number neutral-bg">03</div>
+                                <div class="lesson-content">
+                                    <h2>&#9632;&nbsp;În 1806 instituie <strong>blocada continentală</strong> împotriva Marii Britanii, pentru a o slăbi economic.</h2>
+                                </div>
+                                <div class="lesson-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                <br>
+                         <div class="lessons-list">
+                            <div class="lesson-card info-card">
+                                <div class="lesson-number neutral-bg">04</div>
+                                <div class="lesson-content">
+                                    <h2>&#9632;&nbsp;În cei 10 ani de domnie (1804-1814), Napoleon I a purtat numeroase războaie, majoritatea victorioase.</h2>
+                                </div>
+                                <div class="lesson-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                            </div>
+                         </div>   
+                <br>
+                        <div class="lessons-list">
+                            <div class="lesson-card info-card">
+                                <div class="lesson-number neutral-bg">05</div>
+                                <div class="lesson-content">
+                                    <h2>&#9632;&nbsp;În 1812, Napoleon I pornește o campanie împotriva Rusiei, dar este învins datorită iernii aspre și a tacticii de pământ pârjolit.</h2>
+                                </div>
+                                <div class="lesson-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                            </div>
+
+                        </div class="lessons-list">
+                            <div class="lesson-card info-card">
+                                <div class="lesson-number neutral-bg">06</div>
+                                <div class="lesson-content">
+                                    <h2>&#9632;&nbsp;În 1813, Napoleon I este învins la <strong>Leipzig</strong> și exilat pe insula Elba, dar evadează în 1815, revine la putere pentru o scurtă perioadă numită <strong>Cele o sută de zile</strong>. La sfârșitul acestei perioade, este înfrânt la <strong>Waterloo</strong> și este exilat pe <strong>insula Sf. Elena</strong>.</h2>
+                                </div>
+                                <div class="lesson-icon">
+                                    <i class="fas fa-info-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigare -->
+                    <div class="lesson-category">
+                        <h3 class="category-title">
+                            <i class="fas fa-arrow-right"></i>
+                            Continuă învățarea
+                        </h3>
+                        <div class="lessons-list-1">
+                            <div class="lesson-card navigation-card" onclick="window.location.href='clasa5.html'" style="cursor: pointer;">
+                                <div class="lesson-content">
+                                    <h4>Mergi la Clasa a V-a</h4>
+                                    <p>Continuă cu lecțiile despre Preistoria și Antichitatea. Descoperă civilizațiile care au pus bazele lumii moderne.</p>
+                                </div>
+                                <div class="lesson-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                            </div>
+
+                            <div class="lesson-card navigation-card" onclick="window.location.href='index.html'" style="cursor: pointer;">
+                                <div class="lesson-content">
+                                    <h4>înapoi la Acasă</h4>
+                                    <p>Explorează toate clasele și alege următoarea ta aventură prin timp și istorie.</p>
+                                </div>
+                                <div class="lesson-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+       <div class="container">
+            <p>&copy; 2025 Istoria - cea mai frumoasă poveste! Toate drepturile rezervate.</p>
+            <div class="footer-links">
+                <a href="#privacy">Politica de confidențialitate</a>
+                <a href="#terms">Termeni și condiții</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
