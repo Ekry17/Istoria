@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axa Cronologică Universală (15 Mld î.Hr. - 2100 d.Hr.)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <button id="addEventBtn" class="btn btn-primary">Adaugă Eveniment</button>
+            <button id="editEventBtn" class="btn btn-secondary">Editează Eveniment</button>
+            <button id="deleteEventBtn" class="btn btn-danger">Șterge Eveniment</button>
+            <button id="resetZoomBtn" class="btn btn-info">Reset la Anul 1</button>
+            <button id="saveEventsBtn" class="btn btn-success">Salvează</button>
+            <button id="loadEventsBtn" class="btn btn-warning">Încarcă</button>
+            
+            <div class="info-panel">
+                <span id="zoomInfo">Zoom: 1.0x</span>
+                <span id="rangeInfo">Interval: ...</span>
+            </div>
+        </div>
+
+        <!-- Canvas Container -->
+        <div class="canvas-container">
+            <canvas id="timelineCanvas" width="1200" height="600"></canvas>
+        </div>
+    </div>
+
+    <!-- Modal pentru adăugare/editare evenimente -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Adaugă Eveniment</h2>
+                <span class="close">&times;</span>
+            </div>
+            
+            <div class="modal-body">
+                <div class="instruction">
+                    📝 Completează datele evenimentului și apasă 'SALVEAZĂ EVENIMENT'
+                </div>
+                
+                <div class="form-group">
+                    <label for="eventTitle">Titlu eveniment:</label>
+                    <input type="text" id="eventTitle" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="startYear">An început (negativ pentru î.Hr.):</label>
+                    <input type="number" id="startYear" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="endYear">An sfârșit (opțional):</label>
+                    <input type="number" id="endYear">
+                </div>
+                
+                <div class="form-group">
+                    <label for="eventDescription">Descriere (opțional):</label>
+                    <textarea id="eventDescription" rows="4"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Culoare:</label>
+                    <div class="color-options">
+                        <input type="radio" name="eventColor" value="#4CAF50" id="color1" checked>
+                        <label for="color1" class="color-label" style="background-color: #4CAF50;">Verde</label>
+                        
+                        <input type="radio" name="eventColor" value="#2196F3" id="color2">
+                        <label for="color2" class="color-label" style="background-color: #2196F3;">Albastru</label>
+                        
+                        <input type="radio" name="eventColor" value="#FF9800" id="color3">
+                        <label for="color3" class="color-label" style="background-color: #FF9800;">Portocaliu</label>
+                        
+                        <input type="radio" name="eventColor" value="#F44336" id="color4">
+                        <label for="color4" class="color-label" style="background-color: #F44336;">Roșu</label>
+                        
+                        <input type="radio" name="eventColor" value="#9C27B0" id="color5">
+                        <label for="color5" class="color-label" style="background-color: #9C27B0;">Violet</label>
+                        
+                        <input type="radio" name="eventColor" value="#607D8B" id="color6">
+                        <label for="color6" class="color-label" style="background-color: #607D8B;">Gri</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button id="cancelBtn" class="btn btn-secondary">❌ ANULEAZĂ</button>
+                <button id="saveEventBtn" class="btn btn-primary">✅ SALVEAZĂ EVENIMENT</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Context Menu -->
+    <div id="contextMenu" class="context-menu">
+        <div class="context-item" id="addEventHere">Adaugă eveniment aici</div>
+        <div class="context-item" id="editSelectedEvent">Editează eveniment selectat</div>
+        <div class="context-item" id="deleteSelectedEvent">Șterge eveniment selectat</div>
+    </div>
+
+    <script src="timeline.js"></script>
+</body>
+</html>
