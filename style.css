@@ -1,3 +1,11 @@
+iframe[src="Proiect_Python/index.html"] {
+    width: 90% !important;
+    min-width: 60% !important;
+    height: 15% !important;
+    max-height: 50% !important;
+    display: block;
+    border: none;
+}
 /* ==========================================
    MODERN EDUCATIONAL WEBSITE - HISTORY LEARNING PLATFORM
    Design: Ultra-modern with glassmorphism, gradients and animations
