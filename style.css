@@ -1,3 +1,59 @@
+@media (max-width: 768px) {
+    .test-main, .container {
+        padding: 0.5rem !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        box-sizing: border-box;
+    }
+    .classes-grid, .cards.center-start-test {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: var(--spacing-lg) !important;
+        align-items: stretch !important;
+    }
+    .class-card, .class-card-start-test, .test-start-section {
+        min-width: 0 !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        margin: 0 auto !important;
+        padding: var(--spacing-md) !important;
+        box-sizing: border-box;
+    }
+    .test-hero {
+        padding: var(--spacing-md) 0 !important;
+        min-height: unset !important;
+    }
+    .test-title, .test-hero-content h1 {
+        font-size: 2rem !important;
+        text-align: center !important;
+        word-break: break-word;
+    }
+    .btn-start-test {
+        width: 100% !important;
+        font-size: 1.1rem !important;
+        padding: 1rem 0.5rem !important;
+        margin: 0 auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        border-radius: 1.5rem !important;
+    }
+    .start-test-btn-wrapper {
+        width: 100% !important;
+        margin: 1.5rem 0 0 0 !important;
+        padding: 0 !important;
+    }
+    .footer .container {
+        flex-direction: column !important;
+        gap: var(--spacing-md) !important;
+        text-align: center !important;
+    }
+    .footer-links {
+        flex-direction: column !important;
+        gap: var(--spacing-sm) !important;
+        align-items: center !important;
+    }
+}
 /* Stil special pentru butonul Începe Testul din testare inițială */
 .btn-start-test {
     background: #fff !important;
