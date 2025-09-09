@@ -54,6 +54,7 @@
         align-items: center !important;
     }
 }
+
 /* Stil special pentru butonul Începe Testul din testare inițială */
 .btn-start-test {
     background: #fff !important;
@@ -980,9 +981,7 @@ body .test-hero-content {
     border: 1px solid rgba(231, 76, 60, 0.2);
 }
 
-.protected-content {
-    /* display: none;  Eliminat pentru a nu ascunde conținutul la paginile de testare inițială */
-}
+
 
 
 
@@ -2007,4 +2006,3 @@ body .test-hero-content {
     }
 }
 
-}
