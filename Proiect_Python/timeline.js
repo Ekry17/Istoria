@@ -83,6 +83,81 @@ class TimelineApp {
         
         // Keyboard events
         document.addEventListener('keydown', (e) => this.onKeyDown(e));
+
+    // Touch events for mobile and smartboard
+    this.canvas.addEventListener('touchstart', (e) => this.onTouchStart(e), { passive: false });
+    this.canvas.addEventListener('touchmove', (e) => this.onTouchMove(e), { passive: false });
+    this.canvas.addEventListener('touchend', (e) => this.onTouchEnd(e), { passive: false });
+    }
+    // Touch gesture state
+    touch_active = false;
+    last_touch_x = 0;
+    last_touch_y = 0;
+    last_touch_distance = null;
+
+    onTouchStart(e) {
+        if (e.touches.length === 1) {
+            // Single finger: pan
+            const rect = this.canvas.getBoundingClientRect();
+            this.touch_active = true;
+            this.last_touch_x = e.touches[0].clientX - rect.left;
+            this.last_touch_y = e.touches[0].clientY - rect.top;
+        } else if (e.touches.length === 2) {
+            // Two fingers: pinch zoom
+            this.touch_active = false;
+            this.last_touch_distance = this.getTouchDistance(e);
+        }
+        e.preventDefault();
+    }
+
+    onTouchMove(e) {
+        if (e.touches.length === 1 && this.touch_active) {
+            // Pan
+            const rect = this.canvas.getBoundingClientRect();
+            const x = e.touches[0].clientX - rect.left;
+            const dx = x - this.last_touch_x;
+
+            // Pan the timeline
+            const total_range = this.END_YEAR - this.START_YEAR;
+            const visible_range = total_range / this.zoom_factor;
+            const pan_amount = -(dx / this.canvas_width) * visible_range;
+
+            this.current_center_year += pan_amount;
+
+            // Clamp to bounds
+            const half_visible = visible_range / 2;
+            this.current_center_year = Math.max(this.START_YEAR + half_visible, 
+                                              Math.min(this.END_YEAR - half_visible, this.current_center_year));
+
+            this.last_touch_x = x;
+            this.updateDisplay();
+        } else if (e.touches.length === 2) {
+            // Pinch zoom
+            const new_distance = this.getTouchDistance(e);
+            if (this.last_touch_distance) {
+                const zoom_change = new_distance / this.last_touch_distance;
+                const new_zoom = this.zoom_factor * zoom_change;
+                this.zoom_factor = Math.max(this.min_zoom, Math.min(this.max_zoom, new_zoom));
+                this.updateDisplay();
+            }
+            this.last_touch_distance = new_distance;
+        }
+        e.preventDefault();
+    }
+
+    onTouchEnd(e) {
+        if (e.touches.length === 0) {
+            this.touch_active = false;
+            this.last_touch_distance = null;
+        }
+        e.preventDefault();
+    }
+
+    getTouchDistance(e) {
+        if (e.touches.length < 2) return null;
+        const dx = e.touches[0].clientX - e.touches[1].clientX;
+        const dy = e.touches[0].clientY - e.touches[1].clientY;
+        return Math.sqrt(dx * dx + dy * dy);
     }
     
     setupModalEvents() {

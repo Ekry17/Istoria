@@ -54,7 +54,6 @@
         align-items: center !important;
     }
 }
-
 /* Stil special pentru butonul Începe Testul din testare inițială */
 .btn-start-test {
     background: #fff !important;
@@ -981,7 +980,9 @@ body .test-hero-content {
     border: 1px solid rgba(231, 76, 60, 0.2);
 }
 
-
+.protected-content {
+    /* display: none;  Eliminat pentru a nu ascunde conținutul la paginile de testare inițială */
+}
 
 
 
@@ -2006,3 +2007,32 @@ body .test-hero-content {
     }
 }
 
+/* --- CORECTARE FUNDAL LECȚII PENTRU TABLA DAHUA --- */
+.lessons-section,
+.lesson-content-section {
+    background: #f4f8fb !important;
+}
+
+.lesson-card,
+.new-lesson-content,
+.special-card,
+.info-card,
+.written-sources,
+.unwritten-sources {
+    background: #fff !important;
+    border-radius: 1.5rem !important;
+    box-shadow: 0 4px 16px 0 rgba(44,62,80,0.06) !important;
+    border: 1px solid #eee !important;
+    /* Elimină orice efect de blur sau variabilă glass */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+/* Elimină efectul de blur și din breadcrumb dacă există */
+.breadcrumb {
+    background: #fff !important;
+    border-radius: 1rem !important;
+    border: 1px solid #eee !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
