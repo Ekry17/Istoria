@@ -11,6 +11,7 @@
         <!-- Toolbar -->
         <div class="toolbar">
             <button id="addEventBtn" class="btn btn-primary">Adaugă Eveniment</button>
+            <button id="addBracketBtn" class="btn btn-primary">Adaugă Acoladă</button>
             <button id="editEventBtn" class="btn btn-secondary">Editează Eveniment</button>
             <button id="deleteEventBtn" class="btn btn-danger">Șterge Eveniment</button>
             <button id="resetZoomBtn" class="btn btn-info">Reset la Anul 1</button>
@@ -30,6 +31,40 @@
     </div>
 
     <!-- Modal pentru adăugare/editare evenimente -->
+    <!-- Modal pentru adăugare/editare acolade -->
+    <div id="bracketModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="bracketModalTitle">Adaugă Acoladă</h2>
+                <span class="close" id="closeBracketModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="instruction">
+                    &#123; Completează datele pentru intervalul cronologic și apasă 'SALVEAZĂ ACOLADA' &#125;
+                </div>
+                <div class="form-group">
+                    <label for="bracketLabel">Text deasupra acoladei:</label>
+                    <input type="text" id="bracketLabel" required>
+                </div>
+                <div class="form-group">
+                    <label for="bracketStart">An început (negativ pentru î.Hr.):</label>
+                    <input type="number" id="bracketStart" required>
+                </div>
+                <div class="form-group">
+                    <label for="bracketEnd">An sfârșit:</label>
+                    <input type="number" id="bracketEnd" required>
+                </div>
+                <div class="form-group">
+                    <label for="bracketColor">Culoare acoladă:</label>
+                    <input type="color" id="bracketColor" value="#FFD700">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelBracketBtn" class="btn btn-secondary">❌ ANULEAZĂ</button>
+                <button id="saveBracketBtn" class="btn btn-primary">✅ SALVEAZĂ ACOLADA</button>
+            </div>
+        </div>
+    </div>
     <div id="eventModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -94,11 +129,11 @@
     </div>
 
     <!-- Context Menu -->
-    <div id="contextMenu" class="context-menu">
-        <div class="context-item" id="addEventHere">Adaugă eveniment aici</div>
-        <div class="context-item" id="editSelectedEvent">Editează eveniment selectat</div>
-        <div class="context-item" id="deleteSelectedEvent">Șterge eveniment selectat</div>
-    </div>
+        <div id="contextMenu" class="context-menu">
+            <div class="context-item" id="addEventHere">Adaugă eveniment aici</div>
+            <div class="context-item" id="editSelectedEvent">Editează eveniment selectat</div>
+            <div class="context-item" id="deleteSelectedEvent">Șterge eveniment selectat</div>
+        </div>
 
     <script src="timeline.js"></script>
 </body>
