@@ -12,8 +12,15 @@
 </head>
 
 <body>
-    <!-- Conținut Testare Inițială FĂRĂ parolă -->
-    <div class="protected-content" id="protectedContent" style="display: block;">
+    <div id="passwordOverlay" class="password-overlay">
+        <form id="passwordForm" class="password-form">
+            <label for="passwordInput">Introduceți parola pentru acces:</label>
+            <input type="password" id="passwordInput" placeholder="Parolă clasa a V-a" required>
+            <button type="submit">Accesează</button>
+            <div id="passwordError" class="password-error" style="display:none;color:red;">Parolă greșită!</div>
+        </form>
+    </div>
+    <div class="protected-content" id="protectedContent" style="display: none;">
         <!-- Header -->
         <header class="header">
             <nav class="navbar">
