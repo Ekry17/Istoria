@@ -3,150 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Istoria - cea mai frumoasă poveste!</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Axa Cronologică Universală (15 Mld î.Hr. - 2100 d.Hr.)</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-brand">
-                <i class="fas fa-book-open"></i>
-                <span>Istoria - rădăcina unei societăți!</span>
+    <div class="container">
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <button id="addEventBtn" class="btn btn-primary">Adaugă Eveniment</button>
+            <button id="addBracketBtn" class="btn btn-primary">Adaugă Acoladă</button>
+            <button id="editEventBtn" class="btn btn-secondary">Editează Eveniment</button>
+            <button id="deleteEventBtn" class="btn btn-danger">Șterge Eveniment</button>
+            <button id="resetZoomBtn" class="btn btn-info">Reset la Anul 1</button>
+            <button id="saveEventsBtn" class="btn btn-success">Salvează</button>
+            <button id="loadEventsBtn" class="btn btn-warning">Încarcă</button>
+            
+            <div class="info-panel">
+                <span id="zoomInfo">Zoom: 1.0x</span>
+                <span id="rangeInfo">Interval: ...</span>
             </div>
-            <div class="nav-menu">
-                <a href="index.html" class="nav-link">Acasă</a>
-                <a href="ce_este_istoria.html" class="nav-link">Ce este istoria?</a>
-                <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <!-- Canvas Container -->
+        <div class="canvas-container">
+            <canvas id="timelineCanvas" width="1200" height="600"></canvas>
+        </div>
+    </div>
+
+    <!-- Modal pentru adăugare/editare evenimente -->
+    <!-- Modal pentru adăugare/editare acolade -->
+    <div id="bracketModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="bracketModalTitle">Adaugă Acoladă</h2>
+                <span class="close" id="closeBracketModal">&times;</span>
             </div>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">Istoria - cea mai frumoasă poveste!</h1>
+            <div class="modal-body">
+                <div class="instruction">
+                    &#123; Completează datele pentru intervalul cronologic și apasă 'SALVEAZĂ ACOLADA' &#125;
+                </div>
+                <div class="form-group">
+                    <label for="bracketLabel">Text deasupra acoladei:</label>
+                    <input type="text" id="bracketLabel" required>
+                </div>
+                <div class="form-group">
+                    <label for="bracketStart">An început (negativ pentru î.Hr.):</label>
+                    <input type="number" id="bracketStart" required>
+                </div>
+                <div class="form-group">
+                    <label for="bracketEnd">An sfârșit:</label>
+                    <input type="number" id="bracketEnd" required>
+                </div>
+                <div class="form-group">
+                    <label for="bracketColor">Culoare acoladă:</label>
+                    <input type="color" id="bracketColor" value="#FFD700">
+                </div>
             </div>
-        </section>
-
-        <!-- Classes Section -->
-        <section class="classes-section" id="home">
-            <div class="container">
-                <h2 class="section-title">Alege Clasa Ta</h2>
-                <div class="classes-grid">
-                    <!-- Clasa V -->
-                    <div class="class-card class-5">
-                        <div class="card-header">
-                            <i class="fas fa-scroll"></i>
-                            <h3>CLASA a V-a</h3>
-                        </div>
-                        <div class="card-content">
-                            <h4>Antichitatea</h4>
-                            <ul class="topics-list">
-                                <li>Preistoria și primii oameni</li>
-                                <li>Civilizațiile din Orientul Antic</li>
-                                <li>Grecia Antică și polisurile</li>
-                                <li>Roma Antică și Imperiul</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer">
-                            <a href="clasa5.html" class="btn-explore">
-                                <span>Explorează</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Clasa VI -->
-                    <div class="class-card class-6">
-                        <div class="card-header">
-                            <i class="fas fa-crown"></i>
-                            <h3>CLASA a VI-a</h3>
-                        </div>
-                        <div class="card-content">
-                            <h4>Evul Mediu</h4>
-                            <ul class="topics-list">
-                                <li>Marile descoperiri geografice</li>
-                                <li>Renașterea și Reforma religioasă</li>
-                                <li>Formarea statelor moderne</li>
-                                <li>Iluminismul și secolul luminilor</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer">
-                            <a href="clasa6.html" class="btn-explore">
-                                <span>Explorează</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Clasa VII -->
-                    <div class="class-card class-7">
-                        <div class="card-header">
-                            <i class="fas fa-globe-americas"></i>
-                            <h3>CLASA a VII-a</h3>
-                        </div>
-                        <div class="card-content">
-                            <h4>Epoca contemporană</h4>
-                            <ul class="topics-list">
-                                <li>Primul Război Mondial (1914-1918)</li>
-                                <li>Perioada interbelică</li>
-                                <li>Al Doilea Război Mondial</li>
-                                <li>Războiul Rece și lumea bipolară</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer">
-                            <a href="index - Clasa a VII-a.html" class="btn-explore">
-                                <span>Explorează</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Clasa VIII -->
-                    <div class="class-card class-8">
-                        <div class="card-header">
-                            <i class="fas fa-industry"></i>
-                            <h3>CLASA a VIII-a</h3>
-                        </div>
-                        <div class="card-content">
-                            <h4>Istoria românilor</h4>
-                            <ul class="topics-list">
-                                <li>Geto-dacii și dominația romană</li>
-                                <li>Formarea poporului român</li>
-                                <li>Principatele române medievale</li>
-                                <li>România contemporană</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer">
-                            <a href="clasa8.html" class="btn-explore">
-                                <span>Explorează</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
+            <div class="modal-footer">
+                <button id="cancelBracketBtn" class="btn btn-secondary">❌ ANULEAZĂ</button>
+                <button id="saveBracketBtn" class="btn btn-primary">✅ SALVEAZĂ ACOLADA</button>
+            </div>
+        </div>
+    </div>
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Adaugă Eveniment</h2>
+                <span class="close">&times;</span>
+            </div>
+            
+            <div class="modal-body">
+                <div class="instruction">
+                    📝 Completează datele evenimentului și apasă 'SALVEAZĂ EVENIMENT'
+                </div>
+                
+                <div class="form-group">
+                    <label for="eventTitle">Titlu eveniment:</label>
+                    <input type="text" id="eventTitle" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="startYear">An început (negativ pentru î.Hr.):</label>
+                    <input type="number" id="startYear" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="endYear">An sfârșit (opțional):</label>
+                    <input type="number" id="endYear">
+                </div>
+                
+                <div class="form-group">
+                    <label for="eventDescription">Descriere (opțional):</label>
+                    <textarea id="eventDescription" rows="4"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Culoare:</label>
+                    <div class="color-options">
+                        <input type="radio" name="eventColor" value="#4CAF50" id="color1" checked>
+                        <label for="color1" class="color-label" style="background-color: #4CAF50;">Verde</label>
+                        
+                        <input type="radio" name="eventColor" value="#2196F3" id="color2">
+                        <label for="color2" class="color-label" style="background-color: #2196F3;">Albastru</label>
+                        
+                        <input type="radio" name="eventColor" value="#FF9800" id="color3">
+                        <label for="color3" class="color-label" style="background-color: #FF9800;">Portocaliu</label>
+                        
+                        <input type="radio" name="eventColor" value="#F44336" id="color4">
+                        <label for="color4" class="color-label" style="background-color: #F44336;">Roșu</label>
+                        
+                        <input type="radio" name="eventColor" value="#9C27B0" id="color5">
+                        <label for="color5" class="color-label" style="background-color: #9C27B0;">Violet</label>
+                        
+                        <input type="radio" name="eventColor" value="#607D8B" id="color6">
+                        <label for="color6" class="color-label" style="background-color: #607D8B;">Gri</label>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Istoria - cea mai frumoasă poveste! Toate drepturile rezervate.</p>
-            <div class="footer-links">
-                <a href="#privacy">Politica de confidențialitate</a>
-                <a href="#terms">Termeni și condiții</a>
+            
+            <div class="modal-footer">
+                <button id="cancelBtn" class="btn btn-secondary">❌ ANULEAZĂ</button>
+                <button id="saveEventBtn" class="btn btn-primary">✅ SALVEAZĂ EVENIMENT</button>
             </div>
         </div>
-    </footer>
+    </div>
 
-    <script src="script.js"></script>
+    <!-- Context Menu -->
+        <div id="contextMenu" class="context-menu">
+            <div class="context-item" id="addEventHere">Adaugă eveniment aici</div>
+            <div class="context-item" id="editSelectedEvent">Editează eveniment selectat</div>
+            <div class="context-item" id="deleteSelectedEvent">Șterge eveniment selectat</div>
+        </div>
+
+    <script src="timeline.js"></script>
 </body>
 </html>
