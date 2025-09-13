@@ -115,10 +115,10 @@ iframe[src="Proiect_Python/index.html"] {
 /* ===== CSS CUSTOM PROPERTIES ===== */
 :root {
     /* Modern Color Palette */
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    --warning-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    --primary-gradient: #3a86ff;
+    --secondary-gradient: #ffbe0b;
+    --success-gradient: #43aa8b;
+    --warning-gradient: #f3722c;
     
     /* Main Colors */
     --alb: #ffffff;
@@ -133,9 +133,9 @@ iframe[src="Proiect_Python/index.html"] {
     --gri-inchis: #34495e;
     
     /* Modern Glass Colors */
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.2);
-    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --glass-bg: #fff;
+    --glass-border: #e0e0e0;
+    --glass-shadow: 0 2px 8px 0 #b0b0b0;
     
     /* Spacing */
     --spacing-xs: 0.3rem;
@@ -191,9 +191,7 @@ body {
     font-size: var(--font-size-base);
     line-height: 1.6;
     color: var(--negru);
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    background: #f6f6f6;
     min-height: 100vh;
 }
 
@@ -244,12 +242,10 @@ strong {
 }
 
 .glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
+    background: #fff;
+    border: 1px solid #e0e0e0;
     border-radius: var(--border-radius);
-    box-shadow: var(--glass-shadow);
+    box-shadow: 0 2px 8px 0 #b0b0b0;
 }
 
 .btn {
@@ -284,10 +280,8 @@ strong {
     left: 0;
     right: 0;
     z-index: 1000;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    background: rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background: #3a86ff;
+    border-bottom: 1px solid #2c3e50;
 }
 
 .navbar {
