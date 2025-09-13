@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testare Inițială - Clasa a VII-a | Istoria - cea mai frumoasă poveste!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="passwordOverlay" class="password-overlay">
+        <form id="passwordForm" class="password-form">
+            <label for="passwordInput">Introduceți parola pentru acces:</label>
+            <input type="password" id="passwordInput" placeholder="Parolă clasa a VII-a" required>
+            <button type="submit">Accesează</button>
+            <div id="passwordError" class="password-error" style="display:none;color:red;">Parolă greșită!</div>
+        </form>
+    </div>
+    <div class="protected-content" id="protectedContent" style="display: none;">
+        <!-- Header -->
+        <header class="header">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <i class="fas fa-scroll"></i>
+                    <span>Istoria - cea mai frumoasă poveste!</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Acasă</a>
+                    <a href="clasa5.html" class="nav-link"><i class="fas fa-scroll"></i> Clasa a V-a</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="test-hero">
+            <div class="test-hero-content">
+                <h1 class="test-title">Testare inițială</h1>
+                <nav class="breadcrumb-modern breadcrumb-under-hero">
+                    <a href="index.html"><i class="fas fa-home"></i> Acasă</a>
+                    <span><i class="fas fa-chevron-right"></i></span>
+                    <a href="clasa7.html">Clasa a VII-a</a>
+                    <span><i class="fas fa-chevron-right"></i></span>
+                    <span>Testare Inițială</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="test-main">
+            <!-- Test Info Cards -->
+            <div class="container">
+                <h2 class="section-title">Despre Testare Inițială</h2>
+                <div class="classes-grid">
+                    <div class="class-card">
+                        <div class="card-header">
+                            <i class="fas fa-target"></i>
+                            <h3>Scopul Testării</h3>
+                        </div>
+                        <div class="card-content">
+                            <h4>Evaluare inițială</h4>
+                            <ul class="topics-list">
+                                <li>Identificăm cunoștințele tale din clasa a IV-a</li>
+                                <li>Adaptăm lecțiile la nevoile tale specifice</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="class-card">
+                        <div class="card-header">
+                            <i class="fas fa-clock"></i>
+                            <h3>Durata Aproximativă</h3>
+                        </div>
+                        <div class="card-content">
+                            <h4>15-25 minute</h4>
+                            <ul class="topics-list">
+                                <li>Întrebări despre concepte generale de istorie</li>
+                                <li>Specifice programei clasei a IV-a</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="class-card">
+                        <div class="card-header">
+                            <i class="fas fa-list-ul"></i>
+                            <h3>Tipuri de Întrebări</h3>
+                        </div>
+                        <div class="card-content">
+                            <h4>Varietate</h4>
+                            <ul class="topics-list">
+                                <li>Răspuns multiplu</li>
+                                <li>Asociere conceptuală</li>
+                                <li>Completare spații libere</li>
+                                <li>Întrebări scurte</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="class-card">
+                        <div class="card-header">
+                            <i class="fas fa-chart-bar"></i>
+                            <h3>Evaluarea Rezultatelor</h3>
+                        </div>
+                        <div class="card-content">
+                            <h4>Diagnostic</h4>
+                            <ul class="topics-list">
+                                <li>Nu influențează nota</li>
+                                <li>Personalizăm experiența de învățare</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards center-start-test" style="margin-top: 2.5rem;">
+                    <div class="class-card class-card-start-test">
+                        <div class="card-header">
+                            <i class="fas fa-play-circle"></i>
+                            <h3>Începe Testarea Inițială</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Ești gata să începi această călătorie prin timp? Testul se va deschide într-o fereastră nouă și îți va permite să explorezi cunoștințele despre fascinanta istorie a României antice.</p>
+                            <div class="start-test-btn-wrapper" style="display: flex; justify-content: center; margin-top: 2.5rem;">
+                                <a href="https://docs.google.com/forms/d/17_4GnSnThHwcA3sDqAx6qxCwsKnK-RppiWzyT9wh6oA/viewform"
+                                   target="_blank"
+                                   class="btn-start-test"
+                                   style="font-size: 1.3rem; padding: 1.2rem 2.5rem; box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37); border-radius: 2rem;"
+                                   onclick="return confirm('Testul se va deschide în Google Forms. Ești pregătit să începi?')">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Începe Testul</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 Istoria - cea mai frumoasă poveste! Toate drepturile rezervate.</p>
+                <div class="footer-links">
+                    <a href="#privacy">Politica de confidențialitate</a>
+                    <a href="#terms">Termeni și condiții</a>
+                </div>
+            </div>
+        </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -5,6 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Istoria - cea mai frumoasă poveste!</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Stiluri personalizate pentru centrarea a 2 carduri */
+        .classes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(300px, 400px));
+            gap: var(--spacing-xl);
+            justify-content: center;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .class-card {
+            width: 100%;
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        /* Pentru ecrane mai mici - stivuire verticală */
+        @media (max-width: 768px) {
+            .classes-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                gap: var(--spacing-lg);
+            }
+        }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -31,66 +61,21 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <h1 class="hero-title">Istoria - cea mai frumoasă poveste!</h1>
+                <h1 class="hero-title">Clasa a VII-a</h1>
             </div>
         </section>
 
         <!-- Classes Section -->
         <section class="classes-section" id="home">
             <div class="container">
-                <h2 class="section-title">Alege Clasa Ta</h2>
+                <h2 class="section-title">Alege disciplina</h2>
                 <div class="classes-grid">
-                    <!-- Clasa V -->
-                    <div class="class-card class-5">
-                        <div class="card-header">
-                            <i class="fas fa-scroll"></i>
-                            <h3>CLASA a V-a</h3>
-                        </div>
-                        <div class="card-content">
-                            <h4>Antichitatea</h4>
-                            <ul class="topics-list">
-                                <li>Preistoria și primii oameni</li>
-                                <li>Civilizațiile din Orientul Antic</li>
-                                <li>Grecia Antică și polisurile</li>
-                                <li>Roma Antică și Imperiul</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer">
-                            <a href="clasa5.html" class="btn-explore">
-                                <span>Explorează</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Clasa VI -->
-                    <div class="class-card class-6">
-                        <div class="card-header">
-                            <i class="fas fa-crown"></i>
-                            <h3>CLASA a VI-a</h3>
-                        </div>
-                        <div class="card-content">
-                            <h4>Evul Mediu</h4>
-                            <ul class="topics-list">
-                                <li>Marile descoperiri geografice</li>
-                                <li>Renașterea și Reforma religioasă</li>
-                                <li>Formarea statelor moderne</li>
-                                <li>Iluminismul și secolul luminilor</li>
-                            </ul>
-                        </div>
-                        <div class="card-footer">
-                            <a href="clasa6.html" class="btn-explore">
-                                <span>Explorează</span>
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
 
                     <!-- Clasa VII -->
                     <div class="class-card class-7">
                         <div class="card-header">
                             <i class="fas fa-globe-americas"></i>
-                            <h3>CLASA a VII-a</h3>
+                            <h3>Istorie</h3>
                         </div>
                         <div class="card-content">
                             <h4>Epoca contemporană</h4>
@@ -102,7 +87,7 @@
                             </ul>
                         </div>
                         <div class="card-footer">
-                            <a href="index - Clasa a VII-a.html" class="btn-explore">
+                            <a href="clasa7.html" class="btn-explore">
                                 <span>Explorează</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>
@@ -113,19 +98,19 @@
                     <div class="class-card class-8">
                         <div class="card-header">
                             <i class="fas fa-industry"></i>
-                            <h3>CLASA a VIII-a</h3>
+                            <h3>Geografie</h3>
                         </div>
                         <div class="card-content">
-                            <h4>Istoria românilor</h4>
+                            <h4>Geografia continentelor</h4>
                             <ul class="topics-list">
-                                <li>Geto-dacii și dominația romană</li>
-                                <li>Formarea poporului român</li>
-                                <li>Principatele române medievale</li>
-                                <li>România contemporană</li>
+                                <li>Asia</li>
+                                <li>Africa</li>
+                                <li>America de Nord și de Sud</li>
+                                <li>Australia. Oceania. Antarctica</li>
                             </ul>
                         </div>
                         <div class="card-footer">
-                            <a href="clasa8.html" class="btn-explore">
+                            <a href="clasa7_geografie.html" class="btn-explore">
                                 <span>Explorează</span>
                                 <i class="fas fa-arrow-right"></i>
                             </a>

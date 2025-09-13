@@ -1,0 +1,36 @@
+{
+  "name": "Axa Cronologică JavaScript",
+  "version": "1.0.0",
+  "description": "Aplicație interactivă pentru vizualizarea cronologiei universale de la Big Bang până în 2100 d.Hr.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "start-node": "npx http-server -p 8000"
+  },
+  "keywords": ["timeline", "history", "interactive", "javascript", "canvas"],
+  "author": "Axa Cronologică Team",
+  "license": "MIT",
+  "timeline": {
+    "start_year": -15000000000,
+    "end_year": 2100,
+    "startup_center": 1,
+    "startup_zoom": 100000,
+    "min_zoom": 0.000001,
+    "max_zoom": 10000000000
+  },
+  "features": [
+    "Interactive timeline with zoom and pan",
+    "Event creation, editing, and deletion",
+    "Color-coded event categories",
+    "Local storage persistence",
+    "JSON import/export",
+    "Responsive design",
+    "Context menu support"
+  ],
+  "browser_support": {
+    "chrome": "60+",
+    "firefox": "55+",
+    "safari": "12+",
+    "edge": "79+"
+  }
+}

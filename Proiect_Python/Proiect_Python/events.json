@@ -1,0 +1,184 @@
+[
+  {
+    "title": "Big Bang",
+    "start_year": -13800000000,
+    "end_year": -13800000000,
+    "description": "Originea universului cunoscut - Big Bang-ul.",
+    "color": "#9C27B0"
+  },
+  {
+    "title": "Formarea Pământului",
+    "start_year": -4540000000,
+    "end_year": -4540000000,
+    "description": "Formarea planetei Pământ din nebuloasa solară.",
+    "color": "#607D8B"
+  },
+  {
+    "title": "Primele forme de viață",
+    "start_year": -3800000000,
+    "end_year": -3800000000,
+    "description": "Apariția primelor organisme unicelulare pe Pământ.",
+    "color": "#4CAF50"
+  },
+  {
+    "title": "Evoluția omului modern",
+    "start_year": -300000,
+    "end_year": -300000,
+    "description": "Apariția Homo sapiens în Africa.",
+    "color": "#FF9800"
+  },
+  {
+    "title": "Ultima Eră Glaciară",
+    "start_year": -110000,
+    "end_year": -11700,
+    "description": "Pleistocenul târziu - ultima mare glaciațiune.",
+    "color": "#2196F3"
+  },
+  {
+    "title": "Revoluția Neolitică",
+    "start_year": -10000,
+    "end_year": -4000,
+    "description": "Începutul agriculturii și domesticirii animalelor.",
+    "color": "#FF9800"
+  },
+  {
+    "title": "Inventarea scrierii",
+    "start_year": -3200,
+    "end_year": -3200,
+    "description": "Primele sisteme de scriere în Mesopotamia și Egipt.",
+    "color": "#9C27B0"
+  },
+  {
+    "title": "Piramidele din Giza",
+    "start_year": -2580,
+    "end_year": -2510,
+    "description": "Construirea Marii Piramide din Giza, Egipt.",
+    "color": "#607D8B"
+  },
+  {
+    "title": "Imperiul Roman",
+    "start_year": -27,
+    "end_year": 476,
+    "description": "Imperiul Roman de la Augustus la căderea Romei de Apus.",
+    "color": "#F44336"
+  },
+  {
+    "title": "Nașterea lui Isus Hristos",
+    "start_year": 0,
+    "end_year": 0,
+    "description": "Punctul de referință pentru calendarul creștin.",
+    "color": "#4CAF50"
+  },
+  {
+    "title": "Renașterea",
+    "start_year": 1300,
+    "end_year": 1600,
+    "description": "Perioada de renaștere culturală și artistică în Europa.",
+    "color": "#FF9800"
+  },
+  {
+    "title": "Descoperirea Americii",
+    "start_year": 1492,
+    "end_year": 1492,
+    "description": "Cristofor Columb ajunge în America.",
+    "color": "#2196F3"
+  },
+  {
+    "title": "Revoluția Industrială",
+    "start_year": 1760,
+    "end_year": 1840,
+    "description": "Transformarea societății prin mecanizare și industrializare.",
+    "color": "#607D8B"
+  },
+  {
+    "title": "Primul Război Mondial",
+    "start_year": 1914,
+    "end_year": 1918,
+    "description": "Marele Război care a schimbat ordinea mondială.",
+    "color": "#F44336"
+  },
+  {
+    "title": "Al Doilea Război Mondial",
+    "start_year": 1939,
+    "end_year": 1945,
+    "description": "Cel mai devastator conflict din istoria umanității.",
+    "color": "#F44336"
+  },
+  {
+    "title": "Era Spațială",
+    "start_year": 1957,
+    "end_year": 1957,
+    "description": "Lansarea Sputnik 1 - începutul erei spațiale.",
+    "color": "#2196F3"
+  },
+  {
+    "title": "Primul om pe Lună",
+    "start_year": 1969,
+    "end_year": 1969,
+    "description": "Neil Armstrong și Buzz Aldrin aselenizează cu Apollo 11.",
+    "color": "#9C27B0"
+  },
+  {
+    "title": "Căderea Zidului Berlinului",
+    "start_year": 1989,
+    "end_year": 1989,
+    "description": "Simbolul căderii comunismului în Europa de Est.",
+    "color": "#4CAF50"
+  },
+  {
+    "title": "World Wide Web",
+    "start_year": 1990,
+    "end_year": 1990,
+    "description": "Tim Berners-Lee inventează World Wide Web-ul.",
+    "color": "#2196F3"
+  },
+  {
+    "title": "Era smartphone-urilor",
+    "start_year": 2007,
+    "end_year": 2007,
+    "description": "Lansarea primului iPhone - începutul erei smartphone-urilor.",
+    "color": "#FF9800"
+  },
+  {
+    "title": "Inteligența Artificială Generală (viitor)",
+    "start_year": 2035,
+    "end_year": 2035,
+    "description": "Dezvoltarea primei IA cu capacități umane generale (proiecție).",
+    "color": "#9C27B0"
+  },
+  {
+    "title": "Energia de fuziune (viitor)",
+    "start_year": 2040,
+    "end_year": 2040,
+    "description": "Prima centrală de fuziune nucleară comercială (proiecție).",
+    "color": "#2196F3"
+  },
+  {
+    "title": "Colonizarea Marte (viitor)",
+    "start_year": 2050,
+    "end_year": 2050,
+    "description": "Prima colonie umană permanentă pe Marte (proiecție).",
+    "color": "#FF9800"
+  },
+  {
+    "title": "Neutralitatea carbonului globală (viitor)",
+    "start_year": 2070,
+    "end_year": 2070,
+    "description": "Atingerea neutralității carbonului la nivel global (obiectiv).",
+    "color": "#4CAF50"
+  },
+  {
+    "title": "Orașele plutitoare (viitor)",
+    "start_year": 2080,
+    "end_year": 2100,
+    "description": "Primele orașe plutitoare pe oceane datorită schimbărilor climatice (proiecție).",
+    "color": "#607D8B"
+  },
+  {
+    "title": "Aparitia primatelor",
+    "start_year": -4500000,
+    "end_year": -4400000,
+    "description": "Perioada în care se presupune că au apărut primii hominizi.",
+    "color": "#FF9800"
+  }
+]
