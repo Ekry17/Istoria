@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'clasa a V-a': 'istorie5',
             'clasa a VI-a': 'istorie6',
             'clasa a VII-a': 'istorie7',
+            'clasa a VII-a': 'geografie7',
             'clasa a VIII-a': 'istorie8'
         };
         const overlay = document.getElementById('passwordOverlay');

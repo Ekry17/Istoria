@@ -2,38 +2,47 @@ class TimelineApp {
     constructor() {
         this.canvas = document.getElementById('timelineCanvas');
         this.ctx = this.canvas.getContext('2d');
-        
+
         // Timeline configuration
         this.START_YEAR = -15000000000; // 15 miliarde î.Hr.
         this.END_YEAR = 2100;          // 2100 d.Hr.
         this.current_center_year = 1;  // Pornește centrat pe anul 1
-        
+
         // Zoom configuration
         this.min_zoom = 0.000001;
         this.max_zoom = 1000000000;
         this.zoom_factor = this.max_zoom; // Pornește cu zoom maxim
-        
+
         // Canvas properties
         this.canvas_width = 1200;
         this.canvas_height = 600;
         this.timeline_y = 300; // Poziția Y a axei cronologice
-        
+
         // Event management
         this.events = [];
         this.selected_event = null;
         this.editing_event = null;
         this.right_click_year = null;
-        
+
+        // Brackets (acolade)
+        this.brackets = [
+            // Exemplu: acoladă între 1914 și 1945
+            { start_year: 1914, end_year: 1945, label: 'Războaie Mondiale', color: '#FF9800' }
+        ];
+
         // Mouse state
         this.mouse_down = false;
         this.last_mouse_x = 0;
         this.last_mouse_y = 0;
-        
+
         this.initializeCanvas();
         this.setupEventListeners();
         this.loadEvents();
+    // Eliminat: addBracketButton nu mai există, butonul e în HTML
         this.updateDisplay();
     }
+    // Adaugă buton UI pentru acoladă
+    // addBracketButton eliminat: butonul este deja în HTML, handlerul e atașat în setupEventListeners
     
     initializeCanvas() {
         // Set canvas size
@@ -60,6 +69,38 @@ class TimelineApp {
     }
     
     setupEventListeners() {
+        // Buton pentru ștergere acoladă (șterge ultima acoladă adăugată)
+        const deleteBracketBtn = document.getElementById('deleteBracketBtn');
+        if (deleteBracketBtn) {
+            deleteBracketBtn.addEventListener('click', () => {
+                if (this.brackets.length > 0) {
+                    if (confirm('Sigur vrei să ștergi ultima acoladă adăugată?')) {
+                        this.brackets.pop();
+                        this.updateDisplay();
+                    }
+                } else {
+                    alert('Nu există nicio acoladă de șters!');
+                }
+            });
+        }
+        // Buton pentru adăugare acoladă (UI deja în HTML)
+        const addBracketBtn = document.getElementById('addBracketBtn');
+        if (addBracketBtn) {
+            addBracketBtn.addEventListener('click', () => {
+                const start = prompt('Anul de început pentru acoladă:');
+                const end = prompt('Anul de sfârșit pentru acoladă:');
+                const label = prompt('Eticheta pentru acoladă:');
+                if (start && end && label) {
+                    this.brackets.push({
+                        start_year: parseInt(start),
+                        end_year: parseInt(end),
+                        label,
+                        color: '#FF9800'
+                    });
+                    this.updateDisplay();
+                }
+            });
+        }
         // Mouse events for canvas
         this.canvas.addEventListener('mousedown', (e) => this.onMouseDown(e));
         this.canvas.addEventListener('mousemove', (e) => this.onMouseMove(e));
@@ -440,8 +481,34 @@ class TimelineApp {
     updateDisplay() {
         this.clearCanvas();
         this.drawTimeline();
+        this.drawBrackets();
         this.drawEvents();
         this.updateInfoPanel();
+    }
+
+    // Desenează acoladele pe axă
+    drawBrackets() {
+        for (const bracket of this.brackets) {
+            const x1 = this.yearToX(bracket.start_year);
+            const x2 = this.yearToX(bracket.end_year);
+            if (x1 === null || x2 === null) continue;
+            const y = this.timeline_y - 60;
+            const mid = (x1 + x2) / 2;
+            // Desenează o acoladă ca o curbă Bezier
+            this.ctx.save();
+            this.ctx.strokeStyle = bracket.color || '#FF9800';
+            this.ctx.lineWidth = 3;
+            this.ctx.beginPath();
+            this.ctx.moveTo(x1, y);
+            this.ctx.bezierCurveTo(x1, y-30, x2, y-30, x2, y);
+            this.ctx.stroke();
+            // Etichetă deasupra acoladei
+            this.ctx.font = 'bold 16px Arial';
+            this.ctx.fillStyle = bracket.color || '#FF9800';
+            this.ctx.textAlign = 'center';
+            this.ctx.fillText(bracket.label, mid, y-20);
+            this.ctx.restore();
+        }
     }
     
     clearCanvas() {

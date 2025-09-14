@@ -1,3 +1,131 @@
+/* Contrast maxim pentru cardurile de navigare */
+.lesson-card.navigation-card {
+    background: hsl(180, 42%, 28%) !important;
+    color: #fff !important;
+    border: 2px solid #fff !important;
+}
+/* Forțare footer negru absolut, suprascrie orice altceva */
+.footer {
+    background: #585757 !important;
+    color: #fff !important;
+    height: 80px !important;
+}
+/* === TAB personalizabil pentru lesson-card.info-card.tab-card === */
+.lesson-card.info-card.tab-card {
+    width: calc(95% - 6rem); /* 95% minus spațiul tabului */
+    margin-left: 6rem;       /* TAB exterior */
+}
+
+.lesson-card.info-card.tab-card1 {
+    width: calc(95% - 10rem); /* 95% minus spațiul tabului */
+    margin-left: 10rem;        /* TAB exterior */
+}
+
+
+.epoch-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+        align-items: left;
+        margin: 2rem 0;
+}
+.epoch-list p {
+        font-size: 2rem !important;
+        font-weight: 700;
+        color: var(--alb);
+        margin: 0 1.5rem;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+        line-height: 1.3;
+    }
+    @media (max-width: 900px) {
+        .epoch-list p {
+            font-size: 1.7rem !important;
+        }
+    }
+    @media (max-width: 600px) {
+        .epoch-list p {
+            font-size: 1.2rem !important;
+        }
+    }
+/* Culoare albă pentru titlul principal din index.html */
+.hero-title {
+    color: #f4d6d6 !important;
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.lessons-list-1 {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 2rem !important;
+        width: 100% !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+}
+.lessons-list-1 .lesson-card.navigation-card {
+        flex: 1 1 0;
+        min-width: 250px;
+        max-width: 800px;
+}
+@media (max-width: 900px) {
+    .lessons-list-1 {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+}
+.lesson-card.auxiliary-intro {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+}
+.lesson-card.written-sources .sources-list,
+.lesson-card.unwritten-sources .sources-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+}
+/* === Stil vizibilitate sporită pentru cardurile 5 și 6 (Izvoare Scrise/Nescrise) === */
+.lesson-card.written-sources .lesson-content h2,
+.lesson-card.unwritten-sources .lesson-content h2 {
+        font-size: 2.7rem !important;
+        line-height: 1.25 !important;
+}
+.lesson-card.written-sources .sources-list,
+.lesson-card.unwritten-sources .sources-list {
+        width: 100%;
+        display: flex;
+        gap: 2.2rem;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+}
+.lesson-card.written-sources .sources-list li,
+.lesson-card.unwritten-sources .sources-list li {
+        flex: 1 1 0;
+        min-width: 120px;
+        font-size: 1.5rem !important;
+        font-weight: 600;
+        text-align: center;
+}
+@media (max-width: 900px) {
+    .lesson-card.written-sources .lesson-content h2,
+    .lesson-card.unwritten-sources .lesson-content h2 {
+        font-size: 1.5rem !important;
+    }
+    .lesson-card.written-sources .sources-list,
+    .lesson-card.unwritten-sources .sources-list {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+    .lesson-card.written-sources .sources-list li,
+    .lesson-card.unwritten-sources .sources-list li {
+        font-size: 1.1rem !important;
+    }
+}
+/* ========================= */
+/* === RESPONSIVE MOBILE === */
+/* Stiluri pentru ecrane mici (mobil/tabletă) */
 @media (max-width: 768px) {
     .test-main, .container {
         padding: 0.5rem !important;
@@ -54,7 +182,8 @@
         align-items: center !important;
     }
 }
-/* Stil special pentru butonul Începe Testul din testare inițială */
+/* === BUTON TESTARE INIȚIALĂ === */
+/* Stil special pentru butonul "Începe Testul" */
 .btn-start-test {
     background: #fff !important;
     color: #1a1a1a !important;
@@ -68,7 +197,7 @@
     color: #fff !important;
     box-shadow: 0 15px 35px rgba(52, 152, 219, 0.2);
 }
-/* Centrare card start test */
+/* === CENTRARE CARD TEST === */
 .cards.center-start-test {
     display: flex;
     justify-content: center;
@@ -81,7 +210,7 @@
     margin: 0 auto;
     position: center;
 }
-/* Breadcrumb sub titlu Testare Inițială */
+/* === BREADCRUMB SUB TITLU TESTARE === */
 .breadcrumb-under-hero {
     margin-top: var(--spacing-md);
     justify-content: center !important;
@@ -108,34 +237,35 @@ iframe[src="Proiect_Python/index.html"] {
     border: none;
 }
 /* ==========================================
-   MODERN EDUCATIONAL WEBSITE - HISTORY LEARNING PLATFORM
-   Design: Ultra-modern with glassmorphism, gradients and animations
-   ========================================== */
+    MODERN EDUCATIONAL WEBSITE - HISTORY LEARNING PLATFORM
+    Design: Ultra-modern cu glassmorphism, gradient și animații
+    ========================================== */
 
-/* ===== CSS CUSTOM PROPERTIES ===== */
+/* === VARIABILE CSS (Culori, spațieri, fonturi, umbre etc.) === */
+/* === VARIABILE CSS (aici poți schimba rapid culorile site-ului) === */
 :root {
     /* Modern Color Palette */
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    --warning-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    --primary-gradient:  #764ba2; /* Gradient principal (ex: butoane, carduri) */
+    --secondary-gradient: #f5576c; /* Gradient secundar */
+    --success-gradient: #00f2fe;   /* Gradient pentru succes/confirmare */
+    --warning-gradient:#38f9d7;    /* Gradient pentru avertizări */
     
-    /* Main Colors */
-    --alb: #ffffff;
-    --negru: #1a1a1a;
-    --albastru-inchis: #2c3e50;
-    --azur: #3498db;
-    --verde: #27ae60;
-    --orange: #e67e22;
-    --rosu: #e74c3c;
-    --gri-deschis: #ecf0f1;
-    --gri-mediu: #7f8c8d;
-    --gri-inchis: #34495e;
+    /* Culori principale */
+    --alb: #ffffff;                /* Alb general (fundal, text) */
+    --negru: #1a1a1a;              /* Negru general (text, fundal) */
+    --albastru-inchis: #2c3e50;    /* Albastru închis (text, elemente) */
+    --azur: #3498db;               /* Azur (linkuri, accente) */
+    --verde: #27ae60;              /* Verde (butoane, accente) */
+    --orange: #e67e22;             /* Portocaliu (iconițe, accente) */
+    --rosu: #e74c3c;               /* Roșu (erori, accente) */
+    --gri-deschis: #ecf0f1;        /* Gri deschis (fundal, borduri) */
+    --gri-mediu: #7f8c8d;          /* Gri mediu (texte secundare) */
+    --gri-inchis: #34495e;         /* Gri închis (texte, fundaluri) */
     
-    /* Modern Glass Colors */
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.2);
-    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    /* Culori pentru efect de sticlă (glassmorphism) */
+    --glass-bg: rgba(255, 255, 255, 0.1);   /* Fundal semi-transparent pentru carduri */
+    --glass-border: rgba(255, 255, 255, 0.2); /* Bordură semi-transparentă */
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Umbră pentru efect de sticlă */
     
     /* Spacing */
     --spacing-xs: 0.3rem;
@@ -174,7 +304,7 @@ iframe[src="Proiect_Python/index.html"] {
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* ===== RESET & BASE STYLES ===== */
+/* === RESET & STILURI DE BAZĂ === */
 * {
     margin: 0;
     padding: 0;
@@ -190,8 +320,8 @@ body {
     font-family: var(--font-primary);
     font-size: var(--font-size-base);
     line-height: 1.6;
-    color: var(--negru);
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    color: var(--negru); /* Culoarea textului principal */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); /* Fundalul paginii (poate fi modificat cu alte culori/gradient) */
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
     min-height: 100vh;
@@ -203,7 +333,7 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* ===== TYPOGRAPHY ===== */
+/* === TIPOGRAFIE === */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     line-height: 1.3;
@@ -236,7 +366,7 @@ strong {
     color: red;
 }
 
-/* ===== UTILITIES ===== */
+/* === UTILITARE === */
 .container {
     max-width: 1600px;
     margin: 0 auto;
@@ -277,9 +407,9 @@ strong {
     box-shadow: var(--shadow-lg);
 }
 
-/* ===== HEADER & NAVIGATION ===== */
+/* === HEADER & NAVIGAȚIE === */
 .header {
-    position: sticky;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
@@ -351,13 +481,13 @@ strong {
     backdrop-filter: blur(10px);
 }
 
-/* ===== MAIN CONTENT ===== */
+/* === CONȚINUT PRINCIPAL === */
 .main-content {
     margin-top: 20px;
     min-height: calc(100vh - 80px);
 }
 
-/* ===== HERO SECTIONS ===== */
+/* === HERO (secțiunea principală de sus) === */
 .hero {
     padding: 15px;
     text-align: center;
@@ -387,7 +517,7 @@ strong {
     font-weight: 800;
     margin-bottom: var(--spacing-md);
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(135deg, #fff, #f0f8ff, #e6f3ff);
+    background: linear-gradient(135deg, #fff, #f0f8ff, #e6f3ff); /* Gradient text titlu (poate fi schimbat) */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -426,7 +556,7 @@ strong {
     opacity: 1;
 }
 
-/* ===== CLASSES SECTION (Index Page) ===== */
+/* === SECȚIUNEA CLASE (pagina index) === */
 .classes-section {
     padding: var(--spacing-2xl) 0;
     background: rgba(255, 255, 255, 0.1);
@@ -575,7 +705,7 @@ strong {
 }
 
 
-/* ===== LESSONS SECTION (Class Pages) ===== */
+/* === SECȚIUNEA LECȚII (pagini de clasă) === */
 .lessons-section {
     padding: var(--spacing-2xl) 0;
     background: rgba(255, 255, 255, 0.05);
@@ -633,6 +763,8 @@ strong {
     position: relative;
     overflow: hidden;
     box-shadow: var(--glass-shadow);
+    width: 97%;
+    margin: 0 auto;
 }
 
 
@@ -688,7 +820,7 @@ strong {
 /* Textul din lesson-card-urile albe să fie întunecat */
 .lesson-card:has(.lesson-number.neutral-bg) .lesson-content h4,
 .lesson-card:has(.lesson-number.neutral-bg) .lesson-content p {
-    color: #2c3e50 !important;
+    color: #000000 !important;
     text-shadow: none !important;
 }
 
@@ -728,9 +860,38 @@ strong {
     transform: scale(1.2) rotate(10deg);
 }
 
+/* === Stil personalizat pentru cardurile 5 și 6 din 5_1_ce_este_istoria_simplu.html === */
+.lesson-card.written-sources .lesson-content h2,
+.lesson-card.unwritten-sources .lesson-content h2 {
+        font-size: 2.1rem;
+}
+.lesson-card.written-sources .sources-list,
+.lesson-card.unwritten-sources .sources-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+}
+.lesson-card.written-sources .sources-list li,
+.lesson-card.unwritten-sources .sources-list li {
+        min-width: 120px;
+        font-size: 1.7rem;
+}
+@media (max-width: 700px) {
+    .lesson-card.written-sources .lesson-content h2,
+    .lesson-card.unwritten-sources .lesson-content h2 {
+        font-size: 1.7rem;
+    }
+    .lesson-card.written-sources .sources-list,
+    .lesson-card.unwritten-sources .sources-list {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
 
-
-/* ===== LESSON CONTENT SECTION ===== */
+/* === SECȚIUNEA CONȚINUT LECȚIE === */
 .lesson-content-section {
     padding: var(--spacing-2xl) 0;
     background: rgba(255, 255, 255, 0.05);
@@ -862,7 +1023,7 @@ strong {
 
 
 
-/* ===== PASSWORD PROTECTION ===== */
+/* === PROTECȚIE PAROLĂ === */
 .password-overlay {
     position: fixed;
     top: 0;
@@ -984,10 +1145,6 @@ body .test-hero-content {
     /* display: none;  Eliminat pentru a nu ascunde conținutul la paginile de testare inițială */
 }
 
-
-
-
-
 .close-chat {
     background: none;
     border: none;
@@ -1003,33 +1160,20 @@ body .test-hero-content {
 }
 
 
-
-
 .user-message {
     background: rgba(39, 174, 96, 0.2);
     text-align: right;
 }
-
-
-
-
-
-
-
-
 
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1); }
 }
 
-
-
-/* ===== FOOTER ===== */
+/* === FOOTER === */
 .footer {
-    background: rgba(113, 108, 108, 0.3);
-    backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(255, 70, 70, 0.214);
+    background: #000 !important;
+    border-top: 1px solid #333;
     color: var(--alb);
     text-align: center;
     padding: var(--spacing-xl) 0;
@@ -1060,13 +1204,13 @@ body .test-hero-content {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/* === DESIGN RESPONSIVE (media queries) === */
 @media (max-width: 1400px) {
     .classes-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: var(--spacing-md);
+
     }
-}
 
 @media (max-width: 1200px) {
     .classes-grid {
@@ -1174,67 +1318,17 @@ body .test-hero-content {
 
 
 
-/* ===== ANIMATIONS & EFFECTS ===== */
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+/* Eliminat animații și efecte vizuale pentru performanță */
 
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Apply animations */
-.class-card {
-    animation: slideInUp 0.6s ease-out forwards;
-}
-
-.class-card:nth-child(2) {
-    animation-delay: 0.1s;
-}
-
-.class-card:nth-child(3) {
-    animation-delay: 0.2s;
-}
-
-.class-card:nth-child(4) {
-    animation-delay: 0.3s;
-}
-
-.lesson-card {
-    animation: slideInRight 0.4s ease-out forwards;
-}
-
-.new-content-section {
-    animation: fadeIn 0.8s ease-out forwards;
-}
-
-/* ===== PRINT STYLES ===== */
+/* === STILURI PENTRU PRINT === */
 @media print {
     .header {
         display: none;
     }
 }
 
-/* ===== HIGH CONTRAST MODE ===== */
+/* === MOD CONTRAST RIDICAT === */
 @media (prefers-contrast: high) {
     :root {
         --glass-bg: rgba(255, 255, 255, 0.9);
@@ -1253,7 +1347,7 @@ body .test-hero-content {
     }
 }
 
-/* ===== REDUCED MOTION ===== */
+/* === MOD REDUCED MOTION (pentru accesibilitate) === */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -1270,7 +1364,7 @@ body .test-hero-content {
 
 
 
-/* ===== TESTARE INIȚIALĂ STYLES ===== */
+/* === STILURI TESTARE INIȚIALĂ === */
 .test-hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: var(--spacing-xs) 0;
@@ -1476,9 +1570,9 @@ body .test-hero-content {
 
 
 
-/* ===== MISSING ACTIVE STATES FOR INTERACTIVE ELEMENTS ===== */
+/* === (LIPSĂ) STĂRI ACTIVE PENTRU ELEMENTE INTERACTIVE === */
 
-/* ===== CE ESTE ISTORIA STYLES ===== */
+/* === STILURI "CE ESTE ISTORIA" === */
 .definition-card {
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
@@ -1872,83 +1966,25 @@ body .test-hero-content {
 }
 
 
-/* Additional animations for smooth interaction */
-@keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); }
-    20%, 40%, 60%, 80% { transform: translateX(3px); }
-}
 
-.shake {
-    animation: shake 0.6s;
-}
+/* Eliminat animații suplimentare pentru performanță */
 
-@keyframes successPop {
-    0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0.8);
-    }
-    50% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1.1);
-    }
-    100% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
+/* === CARDURI SPECIALE & SURSE ISTORICE === */
 
-/* ===== CE ESTE ISTORIA SPECIFIC STYLES ===== */
-.special-card {
-    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.1));
-    border: 2px solid rgba(52, 152, 219, 0.3);
-}
-
-.info-card {
-    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1));
-    border: 2px solid rgba(46, 204, 113, 0.3);
-}
-
-.written-sources {
-    background: linear-gradient(135deg, rgba(230, 126, 34, 0.1), rgba(211, 84, 0, 0.1));
-    border: 2px solid rgba(230, 126, 34, 0.3);
-}
-
-.unwritten-sources {
-    background: linear-gradient(135deg, rgba(155, 89, 182, 0.1), rgba(142, 68, 173, 0.1));
-    border: 2px solid rgba(155, 89, 182, 0.3);
-}
-
-.auxiliary-intro {
-    background: linear-gradient(135deg, rgba(52, 73, 94, 0.1), rgba(44, 62, 80, 0.1));
-    border: 2px solid rgba(52, 73, 94, 0.3);
-}
-
-.archaeology-card {
-    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(39, 174, 96, 0.1));
-    border: 2px solid rgba(46, 204, 113, 0.3);
-}
-
-.epigraphy-card {
-    background: linear-gradient(135deg, rgba(230, 126, 34, 0.1), rgba(211, 84, 0, 0.1));
-    border: 2px solid rgba(230, 126, 34, 0.3);
-}
-
-.numismatics-card {
-    background: linear-gradient(135deg, rgba(241, 196, 15, 0.1), rgba(243, 156, 18, 0.1));
-    border: 2px solid rgba(241, 196, 15, 0.3);
-}
-
+.special-card,
+.info-card,
+.written-sources,
+.unwritten-sources,
+.auxiliary-intro,
+.archaeology-card,
+.epigraphy-card,
+.numismatics-card,
 .navigation-card {
-    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
-    border: 2px solid rgba(52, 152, 219, 0.3);
-    transition: all var(--transition-normal);
+    background: #fff;
+    border: 1px solid #eee;
 }
-
 .navigation-card:hover {
-    background: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(41, 128, 185, 0.2));
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-xl);
+    background: #f4f8fb;
 }
 
 .sources-list {
@@ -1960,18 +1996,13 @@ body .test-hero-content {
     gap: var(--spacing-sm);
 }
 
+
 .sources-list li {
-    background: rgba(255, 255, 255, 0.1);
+    background: #f4f8fb;
     padding: var(--spacing-xs);
     border-radius: var(--border-radius);
     font-size: 1.2rem;
-    transition: var(--transition-fast);
     text-align: center;
-}
-
-.sources-list li:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: scale(1.05);
 }
 
 .examples {
@@ -1981,19 +2012,14 @@ body .test-hero-content {
     margin-top: var(--spacing-md);
 }
 
+
 .example-tag {
-    background: rgba(255, 255, 255, 0.2);
-    color: var(--alb);
+    background: #f4f8fb;
+    color: #222;
     padding: var(--spacing-xs) var(--spacing-sm);
     border-radius: var(--border-radius-sm);
     font-size: var(--font-size-xs);
     font-weight: 500;
-    transition: var(--transition-fast);
-}
-
-.example-tag:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.1);
 }
 
 /* Responsive pentru sources-list */
@@ -2007,7 +2033,7 @@ body .test-hero-content {
     }
 }
 
-/* --- CORECTARE FUNDAL LECȚII PENTRU TABLA DAHUA --- */
+/* === CORECTARE FUNDAL LECȚII PENTRU TABLA DAHUA === */
 .lessons-section,
 .lesson-content-section {
     background: #f4f8fb !important;
