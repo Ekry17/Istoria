@@ -1021,7 +1021,10 @@ strong {
     box-shadow: var(--shadow-lg);
 }
 
-
+.sub-tab {
+    margin-left: 15rem;
+    display: inline-block;
+  }
 
 /* === PROTECȚIE PAROLĂ === */
 .password-overlay {
