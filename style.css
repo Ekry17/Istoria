@@ -1026,6 +1026,11 @@ strong {
     display: inline-block;
   }
 
+.sub-tab1 {
+    margin-left: 5rem;
+    display: inline-block;
+  }
+
 /* === PROTECȚIE PAROLĂ === */
 .password-overlay {
     position: fixed;
