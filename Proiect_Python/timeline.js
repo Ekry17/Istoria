@@ -5,8 +5,8 @@ class TimelineApp {
 
         // Timeline configuration
         this.START_YEAR = -15000000000; // 15 miliarde î.Hr.
-        this.END_YEAR = 2100;          // 2100 d.Hr.
-        this.current_center_year = 1;  // Pornește centrat pe anul 1
+        this.END_YEAR = 2100;          // 10.000 d.Hr.
+        this.current_center_year = 1;  // Va fi setat la ultimul an după încărcarea evenimentelor
 
         // Zoom configuration
         this.min_zoom = 0.000001;
@@ -173,12 +173,30 @@ class TimelineApp {
             this.last_touch_x = x;
             this.updateDisplay();
         } else if (e.touches.length === 2) {
-            // Pinch zoom
+            // Pinch zoom - îmbunătățit pentru zoom din ambele părți
             const new_distance = this.getTouchDistance(e);
             if (this.last_touch_distance) {
+                // Calculează centrul gestului de zoom
+                const rect = this.canvas.getBoundingClientRect();
+                const center_x = (e.touches[0].clientX + e.touches[1].clientX) / 2 - rect.left;
+                const center_year = this.xToYear(center_x);
+                
                 const zoom_change = new_distance / this.last_touch_distance;
                 const new_zoom = this.zoom_factor * zoom_change;
                 this.zoom_factor = Math.max(this.min_zoom, Math.min(this.max_zoom, new_zoom));
+                
+                // Ajustează centrul pentru a păstra punctul de zoom fix
+                const total_range = this.END_YEAR - this.START_YEAR;
+                const new_visible_range = total_range / this.zoom_factor;
+                const relative_pos = center_x / this.canvas_width;
+                const offset_from_center = (relative_pos - 0.5) * new_visible_range;
+                this.current_center_year = center_year - offset_from_center;
+                
+                // Clamp to bounds
+                const half_visible = new_visible_range / 2;
+                this.current_center_year = Math.max(this.START_YEAR + half_visible, 
+                                                  Math.min(this.END_YEAR - half_visible, this.current_center_year));
+                
                 this.updateDisplay();
             }
             this.last_touch_distance = new_distance;
@@ -463,6 +481,11 @@ class TimelineApp {
         } else {
             // Add new event
             this.events.push(eventData);
+            // Dacă evenimentul nou este mai recent, centrează pe el
+            const newEventYear = eventData.end_year || eventData.start_year;
+            if (newEventYear > this.getLatestEventYear()) {
+                this.current_center_year = newEventYear;
+            }
         }
         
         this.hideModal();
@@ -473,8 +496,24 @@ class TimelineApp {
     // Zoom and navigation
     resetZoom() {
         this.zoom_factor = this.max_zoom;
-        this.current_center_year = 1;
+        this.current_center_year = this.getLatestEventYear();
         this.updateDisplay();
+    }
+    
+    // Găsește ultimul an din evenimente pentru a centra axa cronologică
+    getLatestEventYear() {
+        if (this.events.length === 0) return 1;
+        
+        let latestYear = this.events[0].start_year;
+        for (const event of this.events) {
+            if (event.start_year > latestYear) {
+                latestYear = event.start_year;
+            }
+            if (event.end_year && event.end_year > latestYear) {
+                latestYear = event.end_year;
+            }
+        }
+        return latestYear;
     }
     
     // Display methods
@@ -680,6 +719,8 @@ class TimelineApp {
         if (savedEvents) {
             try {
                 this.events = JSON.parse(savedEvents);
+                // Centrează pe ultimul an după încărcarea evenimentelor
+                this.current_center_year = this.getLatestEventYear();
                 this.updateDisplay();
                 return;
             } catch (e) {
@@ -702,6 +743,8 @@ class TimelineApp {
                 reader.onload = (e) => {
                     try {
                         this.events = JSON.parse(e.target.result);
+                        // Centrează pe ultimul an după încărcarea evenimentelor
+                        this.current_center_year = this.getLatestEventYear();
                         this.updateDisplay();
                         localStorage.setItem('timelineEvents', e.target.result);
                         alert('Evenimente încărcate cu succes!');
@@ -943,6 +986,8 @@ class TimelineApp {
             }
         ];
         
+        // Centrează pe ultimul an după încărcarea evenimentelor implicite
+        this.current_center_year = this.getLatestEventYear();
         this.updateDisplay();
         this.saveEvents();
     }
