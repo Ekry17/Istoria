@@ -1,0 +1,502 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mari Personalități Medievale Românești</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #2f8a98 0%, #2c8694 100%);
+            color: #fff;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #c8102e 0%, #fcd116 50%, #003da5 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .context-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-left: 5px solid #fcd116;
+            padding: 25px;
+            margin-bottom: 50px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .context-box h2 {
+            color: #f5d018;
+            margin-bottom: 15px;
+            font-size: 2.8em;
+        }
+
+        .context-box p {
+            line-height: 1.8;
+            font-size: 2.1em;
+        }
+        .card {
+            background: rgba(86, 38, 99, 0.749);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            width: 100%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            border: 2px solid transparent;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .card.highlight {
+            border: 3px solid #fadd21;
+            background: rgba(252, 209, 22, 0.15);
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: #fcd116;
+            box-shadow: 0 20px 60px rgba(252, 209, 22, 0.3);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(252, 209, 22, 0.3);
+        }
+
+        .icon {
+            font-size: 3em;
+            margin-right: 20px;
+        }
+
+        .card-title {
+            flex: 1;
+        }
+
+        img {
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            margin-left: 20px;
+            animation: pulse-special 2s infinite;
+        }
+
+        .card-title h3 {
+            font-size: 3em;
+            color: #fcd116;
+            margin-bottom: 5px;
+        }
+
+        .period {
+            color: #f5f115;
+            font-size: 2.2em;
+            font-weight: bold;
+        }
+
+        .achievements {
+            margin-top: 20px;
+        }
+
+        .achievement-item {
+            background: rgba(252, 209, 22, 0.1);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border-left: 4px solid #1cea11;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-item:hover {
+            background: rgba(252, 209, 22, 0.2);
+            transform: translateX(10px);
+        }
+
+        .achievement-title {
+            font-weight: bold;
+            color: #fcd116;
+            margin-bottom: 5px;
+            font-size: 2.5em;
+        }
+
+        .achievement-desc {
+            line-height: 1.6;
+            font-size: 2.5em;
+            opacity: 0.9;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(252, 209, 22, 0.8);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(252, 209, 22, 1);
+            }
+        }
+
+        @keyframes pulse-special {
+            0%, 100% {
+                box-shadow: 0 0 30px rgba(252, 209, 22, 1);
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                box-shadow: 0 0 50px rgba(252, 209, 22, 1);
+                transform: translateX(-50%) scale(1.2);
+            }
+        }
+
+        .crown-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #fcd116, #c8102e);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-left: 10px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(252, 209, 22, 0.4);
+        }
+
+        .legend {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .legend h3 {
+            color: #fcd116;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .legend-items {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .legend-color {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+
+            .card::before {
+                left: -40px !important;
+            }
+
+
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏰 Spațiul românesc și politica de<br>"cruciadă târzie" de la Mircea cel Bătrân<br>la Mihai Viteazul</h1>
+            <p class="subtitle">Secolele XIV-XVI | Epoca Cruciadelor Târzii</p>
+        </header>
+
+        <div class="context-box">
+            <h2>⚔️ Contextul istoric</h2>
+            <p><strong>Sfârșitul secolului XIV </strong> <br> - Imperiul Otoman ajunge la Dunăre, reprezentând o primejdie majoră pentru statele românești și Europa creștină. Monarhii europeni, cu sprijinul Papei, organizează <strong>"cruciade târzii"</strong> - expediții antiotomane organizate după încheierea <strong>"cruciadelor"</strong> (1095 - 1291). Țările românești participă activ la aceste lupte, fiind numite "scut" în apărarea creștinătății.<br><a href="https://materialedeistorie.com/wp-content/uploads/2019/01/009.-tarile-romane-in-secolul-xvi.jpg" target="_blank" rel="noopener noreferrer" class="image-link">Harta țărilor române</a></p>
+        </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="icon">👑</div>
+                        <div class="card-title">
+                            <h3>MIRCEA CEL BĂTRÂN></h3>
+                            <div class="period">1386 - 1418 | Voievod al Țării Românești</div>
+                        </div>
+                         <a href="https://upload.wikimedia.org/wikipedia/commons/f/fd/MirceatheElder.jpg" target="_blank" rel="noopener noreferrer" class="image-link">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/MirceatheElder.jpg" alt="Mircea cel Bătrân" width="150px" height="200px"></a>
+                    </div>
+                    <div class="achievements">
+                        <div class="achievement-item">
+                            <div class="achievement-title">📜 Membru al dinastiei Basarabilor</div>
+                            <div class="achievement-desc">A fost strănepotul voievodului Basarab I, întemeietorul Țării Românești.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">🗡️ Bătălia de la Rovine (1394-1395)</div>
+                            <div class="achievement-desc">Victorie strălucită împotriva sultanului Baiazid/Ildârâm - "Fulgerul" relatată de Mihai Eminescu în "Scrisoarea III".</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">⚔️ Cruciada de la Nicopole (1396)</div>
+                            <div class="achievement-desc">Participare în alianță cu Ungaria și cavalerii apuseni. Înfrângere cauzată de tactici greșite ale occidentalilor.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">🏛️ Cea mai mare întindere teritorială</div>
+                            <div class="achievement-desc">▪ Țara Românească atinge apogeul sub domnia sa, incluzând Dobrogea, Țara Făgărașului și Țara Amlașului. <br>▪ Pierde Dobrogea dar păstrează autonomia în schimbul plății unui tribut.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">📜 Moștenire culturală</div>
+                            <div class="achievement-desc">Ctitorește Mănăstirea Cozia, unde a și fost înmormântat. Simbol al rezistenței românești.</div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="card">
+                    <div class="card-header">
+                        <div class="icon">🛡️</div>
+                        <div class="card-title">
+                            <h3>ALEXANDRU CEL BUN</h3>
+                            <div class="period">1400 - 1432 | Voievod al Moldovei</div>
+                        </div>
+                        <a href="https://upload.wikimedia.org/wikipedia/commons/e/e4/AlexandruCelBun-Neamt.JPG" target="_blank" rel="noopener noreferrer" class="image-link">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/AlexandruCelBun-Neamt.JPG" alt="Alexandru cel Bun" width="150px" height="200px"></a>
+                    </div>
+                    <div class="achievements">
+                        <div class="achievement-item">
+                            <div class="achievement-title">🕊️ Epoca de aur moldovenească</div>
+                            <div class="achievement-desc">Descendent al dinastiei Mușatinilor. Perioadă de pace și prosperitate. Moldova se consolidează ca stat puternic în regiune.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">⚔️ Înfrângerea cavalerilor teutoni</div>
+                            <div class="achievement-desc">În alianță cu Polonia, oastea Moldovei participă la victoria împotriva ordinului teutonic în bătăliile de la <strong><i>Grunwald</i></strong> și <strong><i>Marienburg</i></strong>.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">🏰 Prima ciocnire cu otomanii (1420)</div>
+                            <div class="achievement-desc">Turcii sunt respinși la Chilia și Cetatea Albă. Moldova își demonstrează puterea militară.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">📜 Moștenire culturală</div>
+                            <div class="achievement-desc">În 1432, Alexandru cel Bun moare, fiind înmormântat la Mănăstirea Bistrița, lăsând o moștenire importantă pentru Moldova.</div>
+                        </div>
+                    </div>
+                </div>
+      
+                <div class="card">
+                    <div class="card-header">
+                        <div class="icon">⚜️</div>
+                        <div class="card-title">
+                            <h3>IANCU DE HUNEDOARA</h3>
+                            <div class="period">1441 - 1456 | Voievod al Transilvaniei</div>
+                        </div>
+                        <a href="https://upload.wikimedia.org/wikipedia/commons/1/18/Iancu_Hunedoara.jpg" target="_blank" rel="noopener noreferrer" class="image-link">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Iancu_Hunedoara.jpg" alt="Iancu de Hunedoara" width="150px" height="200px"></a>
+                    </div>
+                    <div class="achievements">
+                        <div class="achievement-item">
+                            <div class="achievement-title">🗺️ "Campania cea lungă" (1443-1444)</div>
+                            <div class="achievement-desc">În calitate de comandant al armatei Ungariei, conduce expediții militare la sud de Dunăre. Succes militar care forțează sultanul să ceară pace.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">⚔️ Înfrângerea de la Varna (1444)</div>
+                            <div class="achievement-desc">Cruciada antiotomană se încheie tragic din cauza neglijenței regelui maghiar, care își pierde viața în bătălie. Iancu devine astfel și rege al Ungariei.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">🏛️ Căderea Constantinopolului (1453)</div>
+                            <div class="achievement-desc">Context istoric: Mahomed al II-lea cucerește Constantinopolul, care devine Istanbul - capitala Imperiului Otoman.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">🛡️ Apărarea Belgradului (1456)</div>
+                            <div class="achievement-desc">Spre sfârșitul domniei, respinge asaltul sultanului Mahomed al II-lea asupra "cheii Regatului Ungariei", unde obține o victorie legendară.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">📜 Sfârșitul domniei</div>
+                            <div class="achievement-desc">▪ La scurt timp după această victorie, Iancu de Hunedoara moare de ciumă, în tabăra de la Zemun.<br>▪ Papa de la Roma a afirmat: "a murit lumina lumii".<br>▪ Este înmormântat în Catedrala catolică de la Alba Iulia.</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="card">
+                    <div class="card-header">
+                        <div class="icon">⭐</div>
+                        <div class="card-title">
+                            <h3>ȘTEFAN CEL MARE</h3>
+                            <div class="period">1457 - 1504 | Voievod al Moldovei (47 ani de domnie!)</div>
+                        </div>
+                         <a href="https://cdn.adh.reperio.news/image-c/cdb97d3b-516a-4193-a251-9b1221f641fa/index.jpeg?p=a%3D1%26co%3D1.05%26w%3D700%26h%3D750%26r%3Dcontain%26f%3Dwebp" target="_blank" rel="noopener noreferrer" class="image-link">
+                            <img src="https://cdn.adh.reperio.news/image-c/cdb97d3b-516a-4193-a251-9b1221f641fa/index.jpeg?p=a%3D1%26co%3D1.05%26w%3D700%26h%3D750%26r%3Dcontain%26f%3Dwebp" alt="Ștefan cel Mare" width="150px" height="200px"></a>
+                    </div>
+                    <div class="achievements">
+                         <div class="achievement-item">
+                            <div class="achievement-title">📜 Membru al dinastiei Mușatinilor</div>
+                            <div class="achievement-desc">A fost nepotul voievodului Alexandru cel Bun și fiul voievodului Bogdan al II-lea. A fost înscăunat voievod în 1457, pe <strong><i>Câmpia Direptății</i></strong>, după ce l-a alungat pe ucigașul tatălui său - Petru Aron.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">🏰 Recucerirea Chiliei (1465)</div>
+                            <div class="achievement-desc">Recucerește cetatea Chiliei, ocupată de Regatul Ungariei. Restabilește controlul strategic al Moldovei.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">⚔️ Victoria de la Baia (1467)</div>
+                            <div class="achievement-desc">Respinge încercarea regelui Matei Corvin de a-l înlătura de pe tron. Apără suveranitatea Moldovei.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">🏆 VASLUI (1475) - MAREA VICTORIE</div>
+                            <div class="achievement-desc">Cea mai strălucită victorie! Înfrânge armata otomană într-o bătălie epică. Refuză plata tributului. Trimite scrisoare către principii creștini occidentali cerând ajutor.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">⚡ Războieni (1476) - Rezistență eroică</div>
+                            <div class="achievement-desc">A rezistat cu vitejie în fața lui Mahomed al II-lea. Înfrângere din cauza superiorității numerice și atacului tătar. Ulterior, își reface armata și îi alungă turcii din țară.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">💔 Pierderea Chiliei și Cetății Albe (1484)</div>
+                            <div class="achievement-desc">Lovitură grea - porturile strategice cu ieșire la Marea Neagră sunt cucerite de turci. Recunoaște suzeranitatea otomană și, spre sfârșitul domniei, plătește tribut turcilor dar păstrează autonomia internă.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">🌲 Codrii Cosminului (1497)</div>
+                            <div class="achievement-desc">Victorie împotriva Poloniei. Apără independența Moldovei pe frontul nordic.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">⛪ Înflorire culturală fără precedent</div>
+                            <div class="achievement-desc">Ctitorește numeroase biserici și mănăstiri, după fiecare bătălie. Moare la 2 iulie 1504 și este înmormântat la Mănăstirea Putna. </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="card">
+                    <div class="card-header">
+                        <div class="icon">🗡️</div>
+                        <div class="card-title">
+                            <h3>VLAD ȚEPEȘ</h3>
+                            <div class="period">1448, 1456-1462, 1476 | Voievod al Țării Românești</div>
+                        </div>
+                        <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Vlad_Tepes_002.jpg/991px-Vlad_Tepes_002.jpg" target="_blank" rel="noopener noreferrer" class="image-link">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Vlad_Tepes_002.jpg/991px-Vlad_Tepes_002.jpg" alt="Vlad Țepeș" width="150px" height="200px"></a>
+                    </div>
+                    <div class="achievements">
+                         <div class="achievement-item">
+                            <div class="achievement-title">📜 Membru al dinastiei Basarabilor</div>
+                            <div class="achievement-desc">A fost nepotul voievodului Mircea cel Bătrân și fiul lui Vlad al II-lea. Ocupă tronul Țării Românești fiind ajutat de Iancu de Hunedoara.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">⚖️ Simbolul dreptății și independenței</div>
+                            <div class="achievement-desc">Refuză să plătească tribut imperiului otoman. Introduce dreptatea ca principiu de bază în cârmuirea statului.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">🔥 Atacuri asupra cetăților otomane</div>
+                            <div class="achievement-desc">Atacă cetățile de la Dunăre, provocând pierderi mari adversarilor. Provocare directă la adresa Imperiului otoman, care hotărăște să-l pedepsească.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">🌙 Atacul nocturn (16-17 iunie 1462)</div>
+                            <div class="achievement-desc">Atac prin surprindere asupra taberei lui Mahomed al II-lea. Încercare de asasinare a sultanului. Panică și victime numeroase în rândurile otomane.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">⛓️ Captivitate și revenire (1462-1476)</div>
+                            <div class="achievement-desc">Trădat de boieri, arestat în Ungaria. Acuzat fals de trădare. Revine pe tron cu ajutorul lui Ștefan cel Mare în 1476. Moare în același an în împrejurări neclare.</div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="card">
+                    <div class="card-header">
+                        <div class="icon">👑</div>
+                        <div class="card-title">
+                            <h3>MIHAI VITEAZUL <span class="crown-badge">UNIFICATORUL</span></h3>
+                            <div class="period">1593 - 1601 | Țara Românească, Transilvania, Moldova</div>
+                        </div>
+                            <a href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Misu_Popp_-_Mihai_Viteazul.jpg/250px-Misu_Popp_-_Mihai_Viteazul.jpg" target="_blank" rel="noopener noreferrer" class="image-link">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Misu_Popp_-_Mihai_Viteazul.jpg/250px-Misu_Popp_-_Mihai_Viteazul.jpg" alt="Mihai Viteazul" width="150px" height="200px"></a>
+                    </div>
+                    <div class="achievements">
+                         <div class="achievement-item">
+                            <div class="achievement-title">📜 Accederea la tron</div>
+                            <div class="achievement-desc">A fost fiul lui Nicolae Pătrașcu și a copilărit ca garanție la curtea otomană, unde a învățat tot ce ținea de arta războiului.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">🚩 Ridicarea steagului antiotoman (1594)</div>
+                            <div class="achievement-desc">Deși considerat inițial "omul turcilor", ridică steagul luptei împotriva otomanilor. Aderă la Liga Sfântă (alianță cu Imperiul Romano-German, Spania, state italiene).</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">⚔️ Călugăreni și Giurgiu (1595)</div>
+                            <div class="achievement-desc">Cu sprijin din Transilvania, se opune cu dârzenie invaziei turcești. Reușește să-i alunge pe turci dar rămâne fără armată. Atunci gândește un proiect personal de unire a tuturor românilor.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">🏆 Șelimbăr (1599) - Cucerirea Transilvaniei</div>
+                            <div class="achievement-desc">Victorie decisivă lângă Sibiu! Alipește Transilvania stăpânirii sale. Intrare triumfală în Alba Iulia (capitala principatului). Măsuri favorabile românilor și sprijin pentru Biserică.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">⚡ Campanie-fulger în Moldova și UNIREA (1600)</div>
+                            <div class="achievement-desc">În primăvara anului 1600, Moldova este supusă rapid după ce îl alungă pe Ieremia Movilă (omul turcilor) și realizează unirea tuturor românilor.</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">💔 Sfârșitul tragic (1601)</div>
+                            <div class="achievement-desc">Unirea este de scurtă durată. Întors în Transilvania se confruntă cu intervențiile austriecilor și răscoala nobilimii maghiare - pierde Transilvania în urma bătăliei de la Mirăslău (1600). Ultima victorie este cu ajutor austriac, la Guruslău (1601). Asasinat la scurt timp din ordinul generalului austriac - Giorgio Basta. Capul său odihnește la Mănăstirea Dealu (Târgoviște).</div>
+                        </div>
+                        <div class="achievement-item">
+                            <div class="achievement-title">📚 Moștenire culturală</div>
+                            <div class="achievement-desc">Figura sa măreață rămâne ca - <i>cel care i-a unit pe toți românii pentru prima dată.</i></div>
+                        </div>
+                    </div>
+                </div>
+        
+        
+        <div class="legend">
+            <h3>🎨 Legendă</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #c8102e;"></div>
+                    <span>Bătălii și conflicte</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #fcd116;"></div>
+                    <span>Victorii și realizări</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #003da5;"></div>
+                    <span>Moștenire culturală</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: linear-gradient(45deg, #fcd116, #c8102e);"></div>
+                    <span>⭐ Personalități excepționale</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
