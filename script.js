@@ -1,6 +1,28 @@
 
 // script.js - universal pentru întregul site
 document.addEventListener('DOMContentLoaded', function () {
+    // --- Re-enable selection, copy, and context menu site-wide ---
+    (function enableCopyAndSelection() {
+        try {
+            const body = document.body;
+            if (body) {
+                ['oncontextmenu','onselectstart','ondragstart','oncut','oncopy','onpaste'].forEach(function(attr){
+                    try { body[attr] = null; } catch (_) {}
+                });
+                // Ensure CSS allows selection
+                body.style.userSelect = 'text';
+                body.style.webkitUserSelect = 'text';
+                body.style.msUserSelect = 'text';
+            }
+            // Clear any document-level handlers if present
+            document.oncontextmenu = null;
+            document.onselectstart = null;
+            document.ondragstart = null;
+            document.oncut = null;
+            document.oncopy = null;
+            document.onpaste = null;
+        } catch (_) { /* no-op */ }
+    })();
     // --- Parolă pentru paginile de testare inițială ---
     (function passwordProtection() {
         const parole = {
